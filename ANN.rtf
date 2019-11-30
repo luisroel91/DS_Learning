@@ -1,0 +1,78 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww7420\viewh8800\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Basic perception equation:\
+\
+Y = x1 * weight1 + x2 * weight two\
+\
+We update weights in order to affect output Y\
+\
+If you input is zero though, that doesn\'92t actually do anything so we fix that by adding a bias term (b) to the inputs\
+\
+Y = (x1 * w1 + b) + (x2 * w2 + b)\
+\
+A single perceptron model isn\'92t enough to learn complicated systems but we can connect layers of perceptrons using a multi-later perceptron model\
+\
+The outputs of one perceptron are directly fed into other every perceptron\
+\
+The first layer is the input layer, that directly receives the data. Last layer is the output layer. Any layer in between the input and output\
+\
+NN\'92s become deep NN\'92s when they contain two or more hidden layers\
+\
+Activation functions set boundaries to output values from the neuron\
+\
+Input * weight + bias, bias being an offset value making input *weight having to reach a certain threshold before having an effect\
+\
+But for example, if we applied a bias of -10, then that particular neuron wouldn\'92t fire until its product surpasses 10, then the effect is solely based on the value of the weight\'85thus the term bias\
+\
+Z = total inputs \
+\
+The most simple networks rely on a basic step function that outputs either 0 or 1. If value of z < 0 = 0, or z > 1 = 1. Strong function, small changes are not processed.\
+\
+A sigmoid (logistic) function is a softer version of the step function, it is slightly more sensitive to small changes\
+\
+Hyperbolic tangent: tanh(z), outputs between -1 and 1 instead of 0 to 1. \
+\
+A ReLU (rectified linear unit), max(0,z). If z > 0, output = z. If less than 0, output is zero. Very good performing specially when dealing with vanishing gradients. Most used.\
+\
+2 main types of multi-class situations. Non-exclusive classes (a data point can have multiple classes/categories assigned to it), mutually exclusive classes (only one class per data point)\
+\
+For example, photos can have multiple tags (beach, family, vacation)\
+A photo can only be full color or grayscale. But not both at the same time.\
+\
+How do we organize multiple classes? One way is to simple have 1 output node per class and this can be implemented using one hot encoding. 1 if it falls into a class, 0 if it doesn\'92t. \
+\
+Non exclusive classes: Sigmoid activation, each neuron will output a value between 0 and 1 indicating the probability of having that class assigned to it\
+\
+Mutually exclusive classes: Softmax activation, calculates the probability distributions of the event over all possible target classes. Range is 0 to 1 and the sum of all probabilities will be equal to one, the one with the highest probability will be chosen\
+\
+How do we evaluate predictions against the true label? How do we update the networks weights and biases? The cost or loss function\
+\
+Y to represent the true value\
+A to represent the neurons prediction\
+\
+In terms of weights and biases\
+\
+W * X + B = Z and Z gets passed into an activation function\
+\
+We calculate the difference between the \'93real\'94 values against our predicted values, we tend to square everything to keep numbers positive and \'93enlarges\'94 or punishes large errors\
+\
+ Cost is a function of (NN\'92s Weights , NN\'92s biases , input of a single training sample , desired output of that training sample)\
+\
+Let\'92s say we only had a single neuron and one weight for our cost function, we want to minimize our cost/overall loss which means, we need to figure out what value of weigh results in the minimum of the cost function\
+\
+Gradient descent: We start at a single point in the cost function surface. Calculate the slope and move downward direction of the slope until eventually you converge to zero, indicating the minimum.\
+\
+How fast it moves down the slop is the step size (learning rate), too small and it will take you forever to reach the min, too large and you\'92ll most likely overshoot the min\
+\
+We could start with larger steps then go smaller as we realize the slop gets closer to zero, adaptive gradient descent. ADAM is an optimized way of performing gradient descent \
+\
+When dealing with dimensional vectors (tensors) we refer to those derivatives as gradients\
+\
+For classification problems we often end up using a cross entropy loss function, it assumes that your model predicts \
+\
+}

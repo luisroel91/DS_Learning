@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Accuracy is not a good metric for unbalanced classes\
+\
+Recall and precision are better metrics in this case, Recall is the ability of a model to find all the relevant cases within a dataset\
+\
+The precise definition of recall is the umber of true positives divided by the number of true positives plus the number of false negatives\
+\
+F1 score is the combination metric of precision and recall. We use it to find an optimal blend of precision and recall\
+\
+It is the harmonic mean of precision and recall\
+\
+F1 = 2 * ((precision * recall) / (precision + recall))\
+\
+A classifier with a precision of 1.0 and recall of 0.0 has an F1 score of 0, which is terrible\
+\
+We often have a precision/recall trade off. We need to decide if the model will or should focus on fixing False Positives VS False negatives\
+\
+In disease diagnosis for example, it is probably better to go in the direction of False positives, so we make sure we correctly classify as many cases of disease as possible\
+\
+A regression task is a task when a model attempts to predict continuous values (numbers) instead of categorical values (labels)\
+\
+The metrics we use for classification problems are not going to work for regressions tasks. We need metrics specific regressions problems and designed for continuous values\
+\
+Mean Absolute Error\
+MSE (Mean squared error)\
+RMSE (Root Mean Squared Error)\
+\
+MAE you compare your predictions to the true Y label. Compare the prediction of a house price VS actual house price. We take the diff between true price - predicted price. Absolute value, and that average that out. MAE won\'92t punish large errors\
+\
+MSE is the mean of the squared errors. (True value - predicted value) squared. It more readily accounts for large errors and outliers. The thing is, the output will be squared which makes it harder to make sense of things\
+\
+The best of both worlds is RMSE. It\'92s the same but you get the root of the whole thing. It\'92s popular because let\'92s say you\'92re predicting house prices. Your units end up being the same as y (house prices, rates, etc). Context is everything. An RMSE of $10 is fantastic for predicting the price of a house (something that costs hundreds of thousands), the same value for predicting the price of a candy bar would be horrible\
+\
+Compare your error metric to the average value of the label in your data set to try to get an intuition of its overall performance\
+\
+How do you measure errors in supervised learning? There are no historical labels\
+\
+There are certain tasks suited to unsupervised learning. Clustering, anomaly detection and dimensionality reduction\
+\
+Clustering is grouping together unlabeled data points into categories/clusters. Data points are assigned to a cluster based on similarity\
+\
+Anomaly detection attempts to detect outliers in a dataset. For example, fraudulent transaction on a credit card\
+\
+Dimensionality reduction are data processing techniques that reduces the number of features in a dataset either for compression or to better understand underlying trends within a data set\
+\
+\
+\
+\
+\
+}
